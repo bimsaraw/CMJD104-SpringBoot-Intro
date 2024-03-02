@@ -10,4 +10,5 @@ import com.ijse.hellospring.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     //Advanced custom queries
+    
 }
