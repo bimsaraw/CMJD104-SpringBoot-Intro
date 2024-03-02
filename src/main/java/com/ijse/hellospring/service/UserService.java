@@ -10,4 +10,5 @@ import com.ijse.hellospring.entity.User;
 public interface UserService {
     List<User> getAllUsers();
     User getUserById(Long id);
+    User createUser(User user);
 }
