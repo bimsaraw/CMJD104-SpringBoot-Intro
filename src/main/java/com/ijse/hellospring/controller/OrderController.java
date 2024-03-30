@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,5 +47,10 @@ public class OrderController {
     @PostMapping("/orders/{id}/addProduct")
     public Order addProductToOrder(@PathVariable Long id, @RequestBody OrderProductDto orderProductDto) {
         return orderService.addProductToOrder(id, orderProductDto.getProductId(), orderProductDto.getQuantity());
+    }
+
+    @DeleteMapping("/orders/{orderId}/product/{productId}")
+    public Order removeProductFromOrder(@PathVariable Long orderId, @PathVariable Long productId) {
+        return orderService.removeProductFromOrder(orderId, productId);
     }
 }

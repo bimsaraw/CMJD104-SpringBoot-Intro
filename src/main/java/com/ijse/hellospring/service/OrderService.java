@@ -12,4 +12,5 @@ public interface OrderService {
     Order getOrderById(Long id);
     Order createOrder(Order order);
     Order addProductToOrder(Long orderId, Long productId, int quantity);
+    Order removeProductFromOrder(Long orderId, Long productId);
 }
